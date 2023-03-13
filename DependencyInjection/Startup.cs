@@ -29,11 +29,11 @@ namespace DependencyInjection
             services.AddControllers();
 
 
-            services.AddScoped<INumGenerator , NumGenerator>();
-            services.AddScoped<INumGenerator2   , NumGenerator2>();
+           // services.AddScoped<INumGenerator , NumGenerator>();
+            //services.AddScoped<INumGenerator2   , NumGenerator2>();
 
           //  services.AddTransient<INumGenerator , NumGenerator>();
-            // services.AddSingleton<INumGenerator , NumGenerator>();
+             services.AddSingleton<INumGenerator , NumGenerator>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

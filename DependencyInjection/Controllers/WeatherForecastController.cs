@@ -13,18 +13,21 @@ namespace DependencyInjection.Controllers
     public class WeatherForecastController : ControllerBase
     {
         private readonly INumGenerator2 numGenerator2;
+        private readonly INumGenerator numGenerator;
 
-        public WeatherForecastController(INumGenerator2 numGenerator2)
+
+        public WeatherForecastController(INumGenerator numGenerator)
         {
-            this.numGenerator2 = numGenerator2;
+            this.numGenerator = numGenerator;
         }
 
         [HttpGet]
-        public string Get()
+        public String Get()
         {
-            int random1 = numGenerator2.RandomValue;
-            int random2 = numGenerator2.GetNumGeneratorRandomNumber();
-            return $"numGenerator2.RandomValue: {random1} , numGenerator.RandomValue:{random2}";
+            int random1 = numGenerator.RandomValue;
+           // int random2 = numGenerator2.GetNumGeneratorRandomNumber();
+            return $"numGenerator2.RandomValue: {random1} ";
+              //  $", numGenerator.RandomValue:{random2}";
 
         }
     }
